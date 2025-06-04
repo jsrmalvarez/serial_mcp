@@ -4,17 +4,30 @@ bool ledState = false;
 String inputString = "";
 bool stringComplete = false;
 
+void printWelcome() {
+  Serial.println("Arduino LED Control");
+  Serial.println("Commands:");
+  Serial.println("  led_on    - Turn LED on");
+  Serial.println("  led_off   - Turn LED off");
+  Serial.println("  get_led   - Get LED state");
+  Serial.println("  [newline] - Show this help");
+}
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
   inputString.reserve(200);
+  printWelcome();
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   if (stringComplete) {
-    if (inputString == "led_on\n") {
+    if (inputString == "\n") {
+      printWelcome();
+    }
+    else if (inputString == "led_on\n") {
       digitalWrite(LED_BUILTIN, HIGH);
       ledState = true;
       Serial.print("ack\n");
