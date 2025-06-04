@@ -1,8 +1,7 @@
 
-
 # branch serial_commands
 
-jsrmalvarez
+- jsrmalvarez
 Hello, this is a Arduino IDE sketch.
 
 For Arduino UNO board. give me a serial control for the board's user LED.
@@ -12,3 +11,10 @@ The control behaves like this:
 when "led_on\n" is received, set the led on and return "ack\n"
 when "led_off\n" is received, set the led off and return "ack\n"
 when "get_led\n" is received, return "on\n" if led is on or "off\n" if led is off
+
+- jsrmalvarez
+Perfect, it works.
+
+Now let's print a welcome  message at init explaining the usage.
+
+Also, when \n is received print the welcome message.
