@@ -30,12 +30,12 @@ void loop() {
     else if (inputString == "led_on\n") {
       digitalWrite(LED_BUILTIN, HIGH);
       ledState = true;
-      Serial.print("ack\n");
+      Serial.print("ack led_on\n");
     }
     else if (inputString == "led_off\n") {
       digitalWrite(LED_BUILTIN, LOW);
       ledState = false;
-      Serial.print("ack\n");
+      Serial.print("ack led_off\n");
     }
     else if (inputString == "get_led\n") {
       Serial.print(ledState ? "on\n" : "off\n");
