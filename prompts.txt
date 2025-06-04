@@ -18,3 +18,15 @@ Perfect, it works.
 Now let's print a welcome  message at init explaining the usage.
 
 Also, when \n is received print the welcome message.
+
+# branch python control
+
+- jsrmalvarez
+
+Please create a python_control folder at workspace root.
+
+In that folder put a python script that uses pyserial.
+
+Ad a function to send and print back: will send a string, and a \n and will listen for response messages until a \n is received or a timeout.
+
+Defaults are COM8 at 9600 baud.

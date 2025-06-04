@@ -17,8 +17,7 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
-  inputString.reserve(200);
-  printWelcome();
+  inputString.reserve(200);  
 }
 
 void loop() {
