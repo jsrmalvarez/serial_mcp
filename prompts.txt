@@ -1,0 +1,54 @@
+
+# branch serial_commands
+
+- jsrmalvarez
+Hello, this is a Arduino IDE sketch.
+
+For Arduino UNO board. give me a serial control for the board's user LED.
+
+The control behaves like this:
+
+when "led_on\n" is received, set the led on and return "ack\n"
+when "led_off\n" is received, set the led off and return "ack\n"
+when "get_led\n" is received, return "on\n" if led is on or "off\n" if led is off
+
+- jsrmalvarez
+Perfect, it works.
+
+Now let's print a welcome  message at init explaining the usage.
+
+Also, when \n is received print the welcome message.
+
+# branch python control
+
+- jsrmalvarez
+
+Please create a python_control folder at workspace root.
+
+In that folder put a python script that uses pyserial.
+
+Ad a function to send and print back: will send a string, and a \n and will listen for response messages until a \n is received or a timeout.
+
+Defaults are COM8 at 9600 baud.
+
+- jsrmalvarez
+
+Please separate serial connection establishment in its own function.
+
+- jsrmalvarez
+
+Create methods in #sym:ArduinoSerialControl for the led operations, to abstract the string command used.
+
+For the responses, create an enum with values ERROR, OK, ON and OFF.
+
+All serial responses without error are of the form "ack command_name <value>"
+
+e.g.
+for "led_on", the successful response is "ack led_on"
+for "get_led", one successful response would be "ack get_led off" to indicate that the led is currently switched off.
+
+This logic is in #file:serial_led_control.ino 
+
+- jsrmalvarez
+
+Let's separate #sym:ArduinoSerialControl class in its own file, and put the main method in a test_serial_control.py file (rename serial_control.py)
