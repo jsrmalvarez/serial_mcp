@@ -9,9 +9,11 @@ def main():
     sys.path.append(str(project_root))
     
     # Start the FastAPI server
+    PORT = 9000
     print("Starting Arduino LED Control API server...")
-    print("API documentation will be available at http://localhost:9000/docs")
-    uvicorn.run("main:app", host="0.0.0.0", port=9000, reload=True)
+    print(f"API documentation will be available at http://localhost:{PORT}/docs")
+    print(f"MCP server will be available at http://localhost:{PORT}/mcp")    
+    uvicorn.run("main:app", host="0.0.0.0", port=PORT, reload=True)
 
 if __name__ == "__main__":
     main()
