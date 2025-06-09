@@ -52,3 +52,6 @@ This logic is in #file:serial_led_control.ino
 - jsrmalvarez
 
 Let's separate #sym:ArduinoSerialControl class in its own file, and put the main method in a test_serial_control.py file (rename serial_control.py)
+
+- jsrmalvarez
+Let's turn #file:test_serial_control.py into a proper pytest so I can run it from vscode UI
