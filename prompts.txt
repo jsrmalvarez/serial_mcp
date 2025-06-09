@@ -70,3 +70,23 @@ Let's use FastAPIMCP to create a MCP server that automatically exposes the rest 
 Keep it simple, use
 mcp = FastApiMCP(app)
 mcp.mount()
+
+# branch main
+- jsrmalvarez
+
+Let's generate a README.md file at the root of the folder showing a diagram with the arduino firware connected through serial to the host pc, running a python_control with an api interface and a mcp interface.
+
+Describe each component.
+
+Give instructions to launch the demo:
+- Program arduino
+- Connect usb cable
+- Identify COM port which arduino is connected to (can change between plug ins)
+- Install python_control dependencies (pip and requirements)
+- Give indications to run tests (beware, the com port must not be in use by backend)
+- Install backend dependencies (pip and requirements)
+- Launch backend with start.py
+- MCP server shall be running at http://localhost:9000/mcp
+- At http://localhost:9000/docs there is an iterface to test the endpoints
+- Connect to VSCode MCP client using mcp.json
+- Send prompts like (Please switch the led on)
