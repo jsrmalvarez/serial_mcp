@@ -48,3 +48,7 @@ for "led_on", the successful response is "ack led_on"
 for "get_led", one successful response would be "ack get_led off" to indicate that the led is currently switched off.
 
 This logic is in #file:serial_led_control.ino 
+
+- jsrmalvarez
+
+Let's separate #sym:ArduinoSerialControl class in its own file, and put the main method in a test_serial_control.py file (rename serial_control.py)
