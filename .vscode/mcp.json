@@ -1,0 +1,8 @@
+{
+    "servers": {
+        "arduino-mcp": {
+            "type": "sse",
+            "url": "http://localhost:9000/mcp"
+        }
+    }
+}

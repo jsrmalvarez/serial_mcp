@@ -63,3 +63,10 @@ Let's add a backend folder, containing a FastAPI based app exposing endpoints to
 
 - jsrmalvarez
 Give me a start.py in backend folder so when I do "python start.py" it starts the backend
+
+- jsrmalvarez
+Let's use FastAPIMCP to create a MCP server that automatically exposes the rest api endpoints as tools.
+
+Keep it simple, use
+mcp = FastApiMCP(app)
+mcp.mount()

@@ -1,8 +1,10 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from enum import Enum
 import sys
 import os
+from fastapi_mcp import FastApiMCP
 
 # Add the parent directory to sys.path to import ArduinoSerialControl
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -12,6 +14,16 @@ app = FastAPI(
     title="Arduino LED Control API",
     description="REST API for controlling Arduino LED via serial communication",
     version="1.0.0"
+)
+
+# Middleware for CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["vscode-webview://*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 # Pydantic models for responses
@@ -79,3 +91,9 @@ async def turn_led_off():
             raise HTTPException(status_code=500, detail="Failed to turn LED off")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+
+# Mount the Model Control Protocol (MCP) endpoints
+mcp = FastApiMCP(app)
+mcp.mount()
