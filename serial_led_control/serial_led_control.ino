@@ -37,7 +37,7 @@ void loop() {
       Serial.print("ack led_off\n");
     }
     else if (inputString == "get_led\n") {
-      Serial.print(ledState ? "on\n" : "off\n");
+      Serial.print(ledState ? "ack get_led on\n" : "ack get_led off\n");
     }
     
     inputString = "";

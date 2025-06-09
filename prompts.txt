@@ -30,3 +30,21 @@ In that folder put a python script that uses pyserial.
 Ad a function to send and print back: will send a string, and a \n and will listen for response messages until a \n is received or a timeout.
 
 Defaults are COM8 at 9600 baud.
+
+- jsrmalvarez
+
+Please separate serial connection establishment in its own function.
+
+- jsrmalvarez
+
+Create methods in #sym:ArduinoSerialControl for the led operations, to abstract the string command used.
+
+For the responses, create an enum with values ERROR, OK, ON and OFF.
+
+All serial responses without error are of the form "ack command_name <value>"
+
+e.g.
+for "led_on", the successful response is "ack led_on"
+for "get_led", one successful response would be "ack get_led off" to indicate that the led is currently switched off.
+
+This logic is in #file:serial_led_control.ino 
