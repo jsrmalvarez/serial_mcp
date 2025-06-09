@@ -19,7 +19,7 @@ Now let's print a welcome  message at init explaining the usage.
 
 Also, when \n is received print the welcome message.
 
-# branch python control
+# branch python_control
 
 - jsrmalvarez
 
@@ -55,3 +55,11 @@ Let's separate #sym:ArduinoSerialControl class in its own file, and put the main
 
 - jsrmalvarez
 Let's turn #file:test_serial_control.py into a proper pytest so I can run it from vscode UI
+
+
+# branch rest-api 
+- jsrmalvarez
+Let's add a backend folder, containing a FastAPI based app exposing endpoints to methods of #sym:ArduinoSerialControl 
+
+- jsrmalvarez
+Give me a start.py in backend folder so when I do "python start.py" it starts the backend
